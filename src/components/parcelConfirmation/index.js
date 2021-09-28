@@ -1,0 +1,114 @@
+import React from 'react';
+import axios from 'axios';
+import { Container, Modal, ModalBody, Row, Col, Button, Spinner } from 'reactstrap';
+import { Link } from "react-router-dom";
+import { URL_API } from '../../helper';
+import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
+import { getCart } from '../../actions';
+import Parcel from '../../asset/img/snacks2.jpg';
+
+toast.configure()
+
+
+class ModalParcel extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: false
+        }
+    }
+
+    customToastWithLink = () => (
+        <div>
+            <p>Please Verify Your Account
+                <span>
+                    <Button size="sm" color="warning" onClick={() => this.resendOTP()}>{this.state.loading === true ? <Spinner color="secondary" style={{alignItems: 'center'}} /> : <span>Request Verification</span>}</Button>
+                </span>
+            </p>
+        </div>
+    );
+
+    resendOTP = () => {
+        this.setState({ loading: false })
+        console.log(this.props.username, this.props.password)
+        axios.patch(URL_API + `/auth/reverif`, {
+            username: this.props.username, password: this.props.password
+        }).then(res => {
+            console.log(res.data)
+            this.setState({ loading: true })
+            toast.success('Email verification has been send. Please check your email', { position: toast.POSITION.TOP_CENTER, autoClose: 6000 })
+        }).catch(err => console.log(err))
+    }
+
+
+    onBtCart = () => {
+        if (this.props.id) {
+            if (this.props.idstatus === 1) {
+                let token = localStorage.getItem("tkn_id")
+                const headers = {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                }
+                let idparcel_type = this.props.detailParcel.id
+                let subtotal = this.props.detailParcel.price
+                console.log("add", idparcel_type, subtotal)
+                axios.post(URL_API + `/transaction/addCart`, { idparcel_type, subtotal }, headers)
+                    .then(res => {
+                        console.log("cart", res.data)
+                        this.props.getCart(res.data)
+                    }).catch(err => console.log("add cart", err))
+            } else {
+                toast.error(this.customToastWithLink, { position: toast.POSITION.TOP_CENTER, autoClose: 3000 })
+            }
+        } else {
+            toast.error('Login First!', { position: toast.POSITION.TOP_CENTER, autoClose: 3000 })
+        }
+    }
+
+
+    render() {
+        console.log("detail", this.props.detailParcel, this.props.category)
+        return (
+            <div>
+                <Modal size="lg" isOpen={this.props.modal} toggle={this.props.btClose}>
+                    <ModalBody>
+                        <Container>
+                            <Row className="box">
+                                <Col md="6" className="p-0">
+                                    <img className="img-log" style={{ objectFit: "fill", borderRadius: "15px 0px 0px 15px", width: "100%", height: "100%" }}
+                                        src={Parcel} alt="img" />
+                                </Col>
+                                <Col md="6" className="col2">
+                                    <h3>Selamat! 🎉🥳</h3>
+                                    <h4>Kamu Memilih Paket {this.props.detailParcel.id}</h4>
+                                    <h6>Parcel harus terdiri dari {this.props.detailParcel.title}</h6>
+                                    <Link className="btn btn-warning" onClick={this.onBtCart}
+                                        to={
+                                            this.props.id ?
+                                                this.props.idstatus === 1 ?
+                                                    `/product?${this.props.category}` : false
+                                                : false
+                                        }
+                                        style={{ textDecoration: "none", color: "black" }}>
+                                        Ambil Parcel
+                                    </Link>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </ModalBody>
+                </Modal>
+            </div>
+        );
+    }
+}
+
+const mapStateToProps = ({ parcelReducers, authReducer }) => {
+    return {
+        ...authReducer,
+        parcel: parcelReducers.parcel_list,
+    }
+}
+
+export default connect(mapStateToProps, { getCart })(ModalParcel);

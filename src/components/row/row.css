@@ -1,0 +1,41 @@
+.card {
+    width: 15%;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    left: 40px;
+    gap: 15px;
+    display: flex;
+    bottom: 100px;
+    z-index: 1;
+}
+
+.card_Img {
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.cards-Img {
+    border-radius: 20px;
+    z-index: 2;
+    width: 60%;
+    position: relative;
+    left: 32px;
+}
+
+.card-body {
+    position: relative;
+    bottom: 50px;
+    border-radius: 20px;
+    background-color: rgb(209, 209, 209);
+}
+
+.body-button {
+    margin-top: 20px;
+}
+
+.row-cards {
+    display: flex;
+    gap: 9px;
+    position: relative;
+}

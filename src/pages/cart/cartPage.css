@@ -1,0 +1,168 @@
+.box-cart {
+    border-bottom: 1px solid #dddddd;
+}
+
+.cart-name {
+    font-weight: bolder;
+    text-align: center;
+}
+
+.td.detail {
+    width: 30%;
+}
+
+.detail-name {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}
+
+.det-title {
+    color: gray;
+    width: 170px;
+}
+
+.line2 {
+    width: 30%;
+    align-content: center;
+    padding-left: 10px;
+}
+
+.span-det {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+}
+
+.input-qty {
+    width: 60%;
+    display: inline-block;
+}
+
+.det-subtotal {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cart-judul {
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.shopping-cart {
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 17px;
+}
+
+.table-cart {
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.th-cart {
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.box-sum {
+    border: 1px solid #dddddd;
+    margin: 0 0 20px 0;
+    padding: 15px 15px 15px 15px;
+    border-radius: 10px;
+}
+
+.sum-order {
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+
+.sum-total {
+    display: flex;
+    border-bottom: 1px dashed #dddddd;
+    justify-content: space-between;
+}
+
+.h6-total {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.h6-hasil {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.sum-2 {
+    border-bottom: 1px dashed #dddddd;
+    padding-top: 8px;
+}
+
+.sum-2x {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sum-ongkir {
+    font-size: 10px;
+    font-style: italic;
+}
+
+.bttn-checkout {
+    border: none;
+    font-family: Arial;
+    font-weight: 700;
+    padding: 10px 80px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background: rgb(28, 144, 221);
+    border-radius: 5px;
+    text-decoration: none;
+    position: relative;
+    top: 0px;
+    left: 12px;
+}
+
+.bttn-edit {
+    border: none;
+    font-family: Arial;
+    font-weight: 700;
+    padding: 10px 47px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background: rgb(245, 180, 0);
+    border-radius: 5px;
+    text-decoration: none;
+    position: relative;
+    top: 0px;
+    left: 12px;
+}
+
+.bttn-delete {
+    border: none;
+    font-family: Arial;
+    font-weight: 700;
+    padding: 10px 40px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background: rgb(177, 0, 0);
+    border-radius: 5px;
+    text-decoration: none;
+    position: relative;
+    top: 10px;
+    left: 12px;
+}
