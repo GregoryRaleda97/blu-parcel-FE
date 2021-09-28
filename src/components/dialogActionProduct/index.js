@@ -205,8 +205,7 @@ const ActionProduct = ({ open, setOpen, action, data, getProductData }) => {
                                     fullWidth
                                 >
                                     <MenuItem value={1}>Food</MenuItem>
-                                    <MenuItem value={2}>Fruit</MenuItem>
-                                    <MenuItem value={3}>Drink</MenuItem>
+                                    <MenuItem value={2}>Drink</MenuItem>
                                 </Select>
                             </Grid>
                         </Grid>

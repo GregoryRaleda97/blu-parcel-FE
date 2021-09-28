@@ -21,7 +21,7 @@ import CartPages from './pages/cart';
 import CheckoutPage from './pages/checkout';
 import UserTransactionPage from './pages/userTransaction';
 import PageNotFound from './pages/pageNotFound';
-// import Product1 from './pages/product1/product1';
+import Product1 from './pages/product1/product1';
 
 class App extends React.Component {
   constructor(props) {
@@ -76,7 +76,7 @@ class App extends React.Component {
                 <Route path='/user-profile' component={UserProfile} />
                 <Route path="/parcel" component={ParcelPage} />
                 <Route path="/product" component={ProductsPage} />
-                {/* <Route path="/product1" component={Product1} /> */}
+                <Route path="/product1" component={Product1} />
                 <Route path="/cart/:id" component={CartPages} />
                 <Route path="/checkout/:id" component={CheckoutPage} />
                 <Route path="/user-transaction/:id" component={UserTransactionPage} />
@@ -89,7 +89,7 @@ class App extends React.Component {
                 <Route path="/verification" component={VerificationPage} />
                 <Route path="/parcel" component={ParcelPage} />
                 <Route path="/product" component={ProductsPage} />
-                {/* <Route path="/product1" component={Product1} /> */}
+                <Route path="/product1" component={Product1} />
                 <Route path="*" component={PageNotFound} />
               </Switch>
         }

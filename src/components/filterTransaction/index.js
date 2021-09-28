@@ -156,7 +156,7 @@ const FilterTransactionManagement = ({paymentStatus, setPaymentStatus, selectedD
                                 name="ongoing"
                                 />
                             }
-                            label="On Going"
+                            label="ongoing"
                             />
                         </MenuItem>
                         <MenuItem>
@@ -168,7 +168,7 @@ const FilterTransactionManagement = ({paymentStatus, setPaymentStatus, selectedD
                                 name="accepted"
                                 />
                             }
-                            label="Accepted"
+                            label="accepted"
                             />
                         </MenuItem>
                         <MenuItem>
@@ -180,7 +180,7 @@ const FilterTransactionManagement = ({paymentStatus, setPaymentStatus, selectedD
                                 name="rejected"
                                 />
                             }
-                            label="Rejected"
+                            label="rejected"
                             />
                         </MenuItem>
                     </Menu>
